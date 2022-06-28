@@ -1,0 +1,467 @@
+* {
+  box-sizing: border-box;
+}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+     v2.0 | 20110126
+     License: none (public domain)
+  */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  overflow-x: hidden;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+body {
+  font-family: "Crimson Text", serif;
+}
+.header {
+  background: rgb(207, 207, 207);
+  height: 50px;
+}
+p.about {
+  color: rgb(205, 66, 66);
+  font-size: 25px;
+  font-weight: 600;
+  margin: 10px 0 0 70px;
+}
+p.about span {
+  font-size: 18px;
+  margin: 50px;
+}
+.main {
+  /* background: grey; */
+  display: flex;
+  min-height: calc(100vh - 100px);
+}
+
+.btn-burger .burger-icon {
+  display: block;
+}
+
+.btn-burger .x-icon {
+  display: none;
+}
+
+.btn-close .burger-icon {
+  display: none;
+}
+
+.btn-close .x-icon {
+  display: block;
+}
+
+.sidebar_left {
+  background: rgb(207, 207, 207);
+  flex: 0 0 60px;
+}
+.sidebar_right {
+  background: rgb(207, 207, 207);
+  flex: 0 0 60px;
+}
+.nav_left {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-burger {
+  display: block;
+  position: relative;
+  border: none;
+  background: none;
+  z-index: 10;
+  cursor: pointer;
+  position: fixed;
+  margin-bottom: 100px;
+}
+.nav_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: fixed;
+  margin-left: 15px;
+  margin-top: -40px;
+  height: 100vh;
+}
+.sidebar_right a {
+  margin: 0 auto;
+  color: black;
+  font-size: 30px;
+}
+.container {
+  margin: 0 auto;
+  display: flex;
+  height: 100%;
+}
+.content {
+  background: black;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 15px;
+}
+p.wellcome_text {
+  margin: 0 0 0 20px;
+  color: white;
+  font-size: 28px;
+  line-height: 35px;
+  text-indent: 45px;
+}
+span.bold {
+  display: block;
+  font-weight: 700;
+  font-size: 35px;
+  margin-top: 20px;
+}
+span.copyright {
+  display: block;
+  font-size: 15px;
+  text-align: right;
+  margin: 0 25px 0 0;
+}
+.wellcome_image img {
+  width: 450px;
+}
+#sidebar_left_ul {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: space-evenly;
+  height: 300px;
+  transform: translateX(-1000px);
+  transition: 1s;
+}
+#sidebar_left_ul.menu-open {
+  position: fixed;
+  top: 145px;
+  left: 70px;
+  transform: translateX(0px);
+  transition: 0.8s;
+}
+.sidebar_left ul li {
+  list-style: none;
+  z-index: 1;
+}
+.sidebar_left ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: black;
+  font-weight: 500;
+}
+.sidebar_left ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 75px;
+  text-align: center;
+  color: white;
+  transition: 0.5s;
+}
+.sidebar_left ul li a .icon i {
+  font-size: 30px;
+}
+.sidebar_left ul li a .title {
+  position: absolute;
+  top: 40%;
+  left: 100px;
+  background: rgba(117, 116, 116, 0.611);
+  transform: translateY(-50%);
+  padding: 5px 10px;
+  border-radius: 6px;
+  /* transition: 0.5s; */
+  /* opacity: 0;
+  visibility: hidden; */
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+}
+.sidebar_left ul li:hover a .title {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-25px) translateY(-50%);
+}
+.sidebar_left ul li:hover a .title::before {
+  content: "";
+  position: absolute;
+  background: white;
+  width: 12px;
+  height: 12px;
+  left: -10px;
+  top: 46%;
+  transform: rotate(45deg) translateY(-50%);
+  border-radius: 2px;
+}
+.footer {
+  background: rgb(207, 207, 207);
+  height: 50px;
+  color: #fff;
+}
+section.about {
+  margin-top: 25px;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-image: url(../img/bg_about.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.about p.history {
+  color: white;
+  font-size: 36px;
+  margin: 300px 0 0 200px;
+}
+
+p.interest {
+  color: rgb(205, 66, 66);
+  font-size: 30px;
+  margin: 20px 0 0 200px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+.content_about {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+section.skills {
+  width: 100%;
+  height: 100vh;
+  margin-top: 25px;
+}
+
+.content_skills {
+  background: black;
+}
+p.my_skills {
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 25px;
+}
+.skills_bar {
+  width: 100%;
+  background: rgb(0, 0, 0);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 25px 30px;
+  margin-top: 25px;
+}
+.skills_bar .bar {
+  margin: 20px 0;
+}
+.skills_bar .bar .info {
+  margin-bottom: 5px;
+}
+.skills_bar .bar .info span {
+  font-size: 17px;
+  font-weight: 500;
+  color: white;
+}
+.skills_bar .bar .progress-line {
+  position: relative;
+  height: 10px;
+  width: 100%;
+  background: #f0f0f0;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.05) 0px 1px
+    rgba(255, 255, 255, 0.8);
+  animation: animate 3s cubic-bezier(0.1, 0.5, 0.1, -0.3) forwards;
+}
+.bar .progress-line span {
+  height: 100%;
+  width: 80%;
+  background: rgb(205, 66, 66);
+  position: absolute;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 2s 2s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+.progress-line.html span {
+  width: 70%;
+}
+.progress-line.css span {
+  width: 50%;
+}
+.progress-line.figma span {
+  width: 40%;
+}
+.progress-line.js span {
+  width: 85%;
+}
+.bar .progress-line span::before {
+  position: absolute;
+  content: "";
+  right: 0;
+  height: 0;
+  width: 0;
+  top: -10px;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-color: rgb(255, 255, 255);
+}
+.bar .progress-line span::after {
+  position: absolute;
+  content: "90%";
+  right: 0;
+  top: -40px;
+  background: rgb(255, 255, 255);
+  color: rgb(205, 66, 66);
+  font-size: 16px;
+  border: 7px solid transparent;
+  font-weight: 700;
+  padding: 1px 8px;
+  border-radius: 3px;
+}
+.progress-line.html span::after {
+  content: "70%";
+}
+.progress-line.css span::after {
+  content: "50%";
+}
+.progress-line.figma span::after {
+  content: "40%";
+}
+.progress-line.js span::after {
+  content: "My close plans";
+}
+.progress-line.react span::after {
+  content: "A little later";
+}
+.progress-line.angular span::after {
+  content: "In some time";
+}
+.progress-line.vue-js span::after {
+  content: "After Angular";
+}
